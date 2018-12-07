@@ -1,5 +1,4 @@
 //Created by Terry Dorsey//
-This project was written for my java class.
 
 	The current version of this software is 1.0
 	The philosophy of the versioning is based around the core functionality being complete,
