@@ -7,7 +7,7 @@ import javax.swing.*;
 //I considered using the someJFrame.dispose(); method instead of opening a new window.
 //Not sure if one way is "better" in terms of modern design, or resources but it seems arbitrary.
 
-public class HangmanStartMenu extends JFrame
+public class StartMenu extends JFrame
 {
 	private static final long serialVersionUID = 1L;//suggested code by eclipse. 
 	
@@ -17,13 +17,13 @@ public class HangmanStartMenu extends JFrame
 	
 	public static void main(String[] args) 
 	{
-		HangmanStartMenu theStartMenu = new HangmanStartMenu();
+		new StartMenu();
 	}
 
-	public HangmanStartMenu()
+	public StartMenu()
 	{
 		this.setSize(800,700);//doesn't really matter because this.pack //only changes spawn location
-		this.setLocationRelativeTo(null);//these just set up the window
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("geekTechnique Hangman");
@@ -61,19 +61,18 @@ public class HangmanStartMenu extends JFrame
 		{
 			if(e.getSource() == playGameButton)
 			{
-				int xLocation = HangmanStartMenu.super.getX();//ugh, these feel like bad form. I want something
-				int yLocation = HangmanStartMenu.super.getY();//... more like theStartMenu.getX();
-				ActualGame theGameWindow = new ActualGame(xLocation, yLocation);
-				//theStartMenu.dispose();//why can't I call this instead?
-				HangmanStartMenu.super.dispose();
+				int xLocation = StartMenu.super.getX();
+				int yLocation = StartMenu.super.getY();
+				new GamePlay(xLocation, yLocation);
+				StartMenu.super.dispose();
 				
 			}
 			else if(e.getSource() == optionsButton)
 			{
-				int xLocation = HangmanStartMenu.super.getX();
-				int yLocation = HangmanStartMenu.super.getY();
+				int xLocation = StartMenu.super.getX();
+				int yLocation = StartMenu.super.getY();
 				new OptionsMenu(xLocation, yLocation);
-				HangmanStartMenu.super.setVisible(false);
+				StartMenu.super.dispose();
 			}
 		}
 	}

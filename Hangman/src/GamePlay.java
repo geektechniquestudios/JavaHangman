@@ -4,17 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class ActualGame extends JFrame
+public class GamePlay extends JFrame
 {
+	private static final long serialVersionUID = 1L; //recommended by eclipse
+	
 	char[] currentWordArray;//declaring fields
 	char[] toBeBlankArray;
 	int failCounter = 1;
+	
+	String currentWord = GameLogic.getRandomWord();
+	String whichHangmanPath = "/ImageAssets/hangman" + failCounter + ".png";
+	
 	JPanel entireGameBoard;
 	JLabel wordToGuess;
 	JLabel hangmanHolder;
-	String currentWord = GameLogic.getRandomWord();
-	String whichHangmanPath = "/ImageAssets/hangman" + failCounter + ".png";
-	private static final long serialVersionUID = 1L; //recommended by eclipse
 	JButton butA, butB, butC, butD, butE, butF, butG, butH, butI, butJ,
 	butK, butL, butM, butN, butO, butP, butQ, butR, butS, butT, butU, butV,
 	butW, butX, butY, butZ;
@@ -25,7 +28,7 @@ public class ActualGame extends JFrame
 	//Most of my leftover code is in the ButtonPrinter.java file. That file doesn't contain any code dependencies for this project. 
 	//It is there for reference
 	
-	public ActualGame(int xLocation, int yLocation)
+	public GamePlay(int xLocation, int yLocation)
 	{
 		butA = new JButton("A");
 		butB = new JButton("B");
@@ -208,11 +211,11 @@ public class ActualGame extends JFrame
 				if((GameLogic.doesArrayContainUnderscores(toBeBlankArray)) == false)//user has won
 				{
 					String winPhrase = "You Won!  The word was " + currentWord;
-					int xLocation = ActualGame.super.getX();
-					int yLocation = ActualGame.super.getY();
+					int xLocation = GamePlay.super.getX();
+					int yLocation = GamePlay.super.getY();
 					new GameOver(xLocation - 200, yLocation + 100, winPhrase);//I have tried to think of a better way. Is there a get center method? Using bounds or something? Will research later
 					// I think getX and getY refer to the top left corner of the window
-					ActualGame.super.dispose();//Would rather be using instantiated JFrames, but I'll figure it out soon.			
+					GamePlay.super.dispose();
 				}
 			}
 			else//fires if they guessed wrong
@@ -222,10 +225,10 @@ public class ActualGame extends JFrame
 				if(failCounter == 8)//player loses
 				{
 					String losePhrase = "You Lost! The word was " + currentWord;
-					int xLocation = ActualGame.super.getX();
-					int yLocation = ActualGame.super.getY();
+					int xLocation = GamePlay.super.getX();
+					int yLocation = GamePlay.super.getY();
 					new GameOver(xLocation, yLocation, losePhrase);
-					ActualGame.super.dispose();
+					GamePlay.super.dispose();
 				}
 				
 				hangmanHolder.setIcon//updates image to add body part

@@ -42,10 +42,8 @@ public class GameOver extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{////////////////////////////////////////////////////////////////////////////////////////////////
-			//HangmanStartmenu.setVisibilityTrue();//Why can't I call the instance or the class or something!? Ugh, the people on sOverflw didn't help/////////////////////////////////////
-			//Even an instance of it? like theStartMenu.setVisibilityTrue()?
-			HangmanStartMenu anotherStartMenu = new HangmanStartMenu();//should I just write "new HangmanStartMenu". It just feels wrong. 
-			GameOver.super.dispose();//btw, I only used different instances because I originally wrote this differently.
+			new StartMenu();
+			GameOver.super.dispose();
 		}
 	}
 }
