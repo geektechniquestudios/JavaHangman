@@ -4,9 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-//I considered using the someJFrame.dispose(); method instead of opening a new window.
-//Not sure if one way is "better" in terms of modern design, or resources but it seems arbitrary.
-
 public class StartMenu extends JFrame
 {
 	private static final long serialVersionUID = 1L;//suggested code by eclipse. 

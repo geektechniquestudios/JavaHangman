@@ -6,7 +6,6 @@ import javax.swing.*;
 
 public class OptionsMenu extends JFrame
 {
-	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
 		this.setSize(500, 250);
