@@ -5,7 +5,7 @@
 	and this is a completely functional hangman game. Future updates will be 
 	viewed as features, updates, optimizations and bug fixes. 
 	
-	For reference, the main class is the HangmanStartMenu file
+	For reference, the main class is the StartMenu file
 	
 	What's to come:
 		-Improvements to the graphics and layout, specifically for the 'game over' window, and hangman graphic
