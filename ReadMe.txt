@@ -1,6 +1,6 @@
 //Created by Terry Dorsey//
 
-	The current version of this software is 1.0
+	The current version of this software is 1.0.2
 	The philosophy of the versioning is based around the core functionality being complete,
 	and this is a completely functional hangman game. Future updates will be 
 	viewed as features, updates, optimizations and bug fixes. 
