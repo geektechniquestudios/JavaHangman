@@ -19,7 +19,7 @@ public class OptionsMenu extends JFrame
 		JTextField addWordField = new JTextField();
 		JButton addWordButton = new JButton();
 		JButton deleteWordButton = new JButton();
-		JList wordBank = new JList(GameLogic.wordBank);
+		//JList wordBank = new JList(GameLogic.wordBank);
 		
 		//add elements to panels
 		topLeft.add(addWordField);
