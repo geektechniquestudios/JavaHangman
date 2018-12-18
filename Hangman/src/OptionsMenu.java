@@ -8,10 +8,42 @@ public class OptionsMenu extends JFrame
 {
 	public OptionsMenu(int xLocation, int yLocation)
 	{
+				
+		JPanel mainGrid = new JPanel();
+		JPanel topLeft = new JPanel();
+		JPanel topRight = new JPanel();
+		JPanel bottomLeft = new JPanel();
+		JPanel bottomRight = new JPanel();
+		
+		//create elements
+		JTextField addWordField = new JTextField();
+		JButton addWordButton = new JButton();
+		JButton deleteWordButton = new JButton();
+		JList wordBank = new JList(GameLogic.wordBank);
+		
+		//add elements to panels
+		topLeft.add(addWordField);
+		topRight.add(addWordButton);
+		bottomLeft.add(deleteWordButton);
+		bottomRight.add(wordBank);
+		
+		//adding the 4 panels to the main layout
+		mainGrid.setLayout(new GridLayout(2, 2, 3, 3));
+		mainGrid.add(topLeft);
+		mainGrid.add(topRight);
+		mainGrid.add(bottomLeft);
+		mainGrid.add(bottomRight);
+		
+		
 		this.setSize(500, 250);
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
-		JLabel filler = new JLabel("I'll do this in an update.");
-		this.add(filler);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+
+		this.add(mainGrid);
+		//this.add(filler);
+		
+		
 	}	
 }

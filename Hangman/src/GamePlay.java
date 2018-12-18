@@ -22,11 +22,8 @@ public class GamePlay extends JFrame
 	butK, butL, butM, butN, butO, butP, butQ, butR, butS, butT, butU, butV,
 	butW, butX, butY, butZ;
 	
-	//I made these button definitions print out with a small program I made that iterates an alphabet char array 
-	//and prints each value contextually so each time I have to use the whole alphabet, I only write the code once
-	//I used variations throughout the construction of this project
-	//Most of my leftover code is in the ButtonPrinter.java file. That file doesn't contain any code dependencies for this project. 
-	//It is there for reference
+	//I made these button definitions print out with a small program 
+	//see buttonPrinter
 	
 	public GamePlay(int xLocation, int yLocation)
 	{
@@ -65,6 +62,7 @@ public class GamePlay extends JFrame
 		this.setTitle("Hangman");
 		
 		Font fontForGuess = new Font("Algerian", Font.PLAIN, 30);
+		String currentWord = this.currentWord;
 		
 		//defining new JPanels
 		entireGameBoard = new JPanel(); //field so I can call it on listener action
@@ -89,11 +87,9 @@ public class GamePlay extends JFrame
 		medRow.setLayout(new FlowLayout());
 		bottomRow.setLayout(new FlowLayout());
 		entireGameBoard.setLayout(new FlowLayout());
-		
-		String currentWord = this.currentWord;///////////this belongs somewhere else for form's sake
-		
+				
 		//make an array that contains blanks the length of the currentWord
-		//perhaps move this to GameLogic so things are clean
+		//perhaps move this to GameLogic 
 		toBeBlankArray = currentWord.toCharArray();
 		for(int x = 0; x < toBeBlankArray.length; x++)
 		{
@@ -195,7 +191,9 @@ public class GamePlay extends JFrame
 			
 			String upperCaseCurretWord = currentWord.toUpperCase();//could def make this more efficient|I'm repeating myself: 							
 			currentWordArray = upperCaseCurretWord.toCharArray();//see GameLogic for almost exact same logic|will do later
-			for(int x = 0; x < isArrayRight.length; x++)//takes the blanks and fills in the letter if guess was correct
+			
+			//takes the blanks and fills in the letter if guess was correct
+			for(int x = 0; x < isArrayRight.length; x++)
 			{
 				if(isArrayRight[x] == true)
 				{

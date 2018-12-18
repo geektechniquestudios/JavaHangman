@@ -25,6 +25,8 @@ public class GameLogic
 		return randomWord;
 	}
 	
+	
+	
 	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//this generates a boolean array in response to the user's guess against the current word
 	{
 	
