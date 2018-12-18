@@ -25,7 +25,7 @@ public class OptionsMenu extends JFrame
 		topLeft.add(addWordField);
 		topRight.add(addWordButton);
 		bottomLeft.add(deleteWordButton);
-		bottomRight.add(wordBank);
+		//bottomRight.add(wordBank);
 		
 		//adding the 4 panels to the main layout
 		mainGrid.setLayout(new GridLayout(2, 2, 3, 3));
