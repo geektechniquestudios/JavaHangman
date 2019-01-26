@@ -9,6 +9,13 @@ public class GameLogic
 	public static String getRandomWord()
 	//will add the ability to add words in options once I get the file object down,
 	{	
+//		//the below will read from a file and add it to an arrayList.
+//		Scanner s = new Scanner(new File("filepath"));
+//		ArrayList<String> list = new ArrayList<String>();
+//		while (s.hasNext()){
+//		    list.add(s.next());
+//		}
+//		s.close();
 		wordBank.add("Apple");
 		wordBank.add("Fish");
 		wordBank.add("Shirt");
@@ -29,7 +36,6 @@ public class GameLogic
 	
 	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//this generates a boolean array in response to the user's guess against the current word
 	{
-	
 		String upperCaseCurretWord = currentWord.toUpperCase();
 		char[] currentWordArray = upperCaseCurretWord.toCharArray();
 		boolean[] returnArray = new boolean[currentWordArray.length];

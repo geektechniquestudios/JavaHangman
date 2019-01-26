@@ -19,7 +19,16 @@ public class OptionsMenu extends JFrame
 		JTextField addWordField = new JTextField();
 		JButton addWordButton = new JButton();
 		JButton deleteWordButton = new JButton();
+		JButton mainMenuButton = new JButton();
 		//JList wordBank = new JList(GameLogic.wordBank);
+		
+		
+		//define attributes
+		addWordField.setPreferredSize(new Dimension(150, 20));
+		addWordButton.setText("< Add a word");
+		deleteWordButton.setText("Delete a word >");
+		
+		mainMenuButton.setText("Main Menu");
 		
 		//add elements to panels
 		topLeft.add(addWordField);
@@ -34,14 +43,13 @@ public class OptionsMenu extends JFrame
 		mainGrid.add(bottomLeft);
 		mainGrid.add(bottomRight);
 		
-		
 		this.setSize(500, 250);
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-
 		this.add(mainGrid);
+		//this.add(mainMenuButton);
 		//this.add(filler);
 		
 		
