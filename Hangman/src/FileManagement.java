@@ -4,9 +4,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
-public class TestClass 
+public class FileManagement 
 {
 	private Scanner someScanner;
 	
@@ -25,27 +23,26 @@ public class TestClass
 		}
 		catch(Exception e)
 		{
-			System.out.println("Well fuck");
+			System.out.println("Something went wrong!");
 		}
 	}
 	
 	public void readFile()
 	{
-		while(someScanner.hasNext())
-		{
-			String a = someScanner.next();
+		//while(someScanner.hasNext())
+		//{
+			String a = someScanner.nextLine();
 			System.out.println(a);
-		}
+		//}
 	}
 	
-	public void cloesFile()
+	public void closeFile()
 	{
 		someScanner.close();
 	}
 	
-	public void writeToFile()
+	public void writeToFile(String newWord)
 	{
-		String someString = "Well Fuck";
 		try
 		{
 			BufferedWriter someWriter = new BufferedWriter
@@ -55,12 +52,12 @@ public class TestClass
 							"WordBank.txt", true
 						)
 				);
-			someWriter.append(" " + someString);
+			someWriter.append("\n" + newWord);
 			someWriter.close();
 		}
 		catch(Exception e)
 		{
-			System.out.println(someString);
+			System.out.println("Something went wrong!");
 		}
 	}
 	

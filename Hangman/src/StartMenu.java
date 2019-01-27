@@ -14,13 +14,14 @@ public class StartMenu extends JFrame
 	
 	public static void main(String[] args) 
 	{
-		new StartMenu();
+		StartMenu someStartMenu = new StartMenu(0, 0);
+		someStartMenu.setLocationRelativeTo(null);
 	}
 
-	public StartMenu()
+	public StartMenu(int xLocation, int yLocation)
 	{
 		this.setSize(800,700);//doesn't really matter because this.pack //only changes spawn location
-		this.setLocationRelativeTo(null);
+		this.setLocation(xLocation, yLocation);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("geekTechnique Hangman");

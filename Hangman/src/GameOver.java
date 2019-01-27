@@ -42,7 +42,7 @@ public class GameOver extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{////////////////////////////////////////////////////////////////////////////////////////////////
-			new StartMenu();
+			new StartMenu(0, 0);
 			GameOver.super.dispose();
 		}
 	}

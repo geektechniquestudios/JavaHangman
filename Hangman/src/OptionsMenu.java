@@ -6,6 +6,11 @@ import javax.swing.*;
 
 public class OptionsMenu extends JFrame
 {
+	JButton mainMenuButton = new JButton();
+	JButton addWordButton = new JButton();
+	JButton deleteWordButton = new JButton();
+	JTextField addWordField = new JTextField();
+	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
 		JPanel overGrid = new JPanel();		
@@ -19,10 +24,8 @@ public class OptionsMenu extends JFrame
 		
 		
 		//create elements
-		JTextField addWordField = new JTextField();
-		JButton addWordButton = new JButton();
-		JButton deleteWordButton = new JButton();
-		JButton mainMenuButton = new JButton();
+		
+		//JButton mainMenuButton = new JButton();
 		//JList wordBank = new JList(GameLogic.wordBank);
 		
 		
@@ -53,7 +56,8 @@ public class OptionsMenu extends JFrame
 		
 		
 		this.setSize(500, 250);
-		this.setLocation(xLocation + 25, yLocation + 300);
+		this.setResizable(false);
+		this.setLocation(xLocation + 100, yLocation + 300);
 		this.setVisible(true);
 		//this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,8 +65,38 @@ public class OptionsMenu extends JFrame
 		this.add(overGrid);
 	
 		//this.add(mainMenuButton);
-		//this.add(filler);
+		//this.add(filler);	
 		
+		ListenForButton someButtonListener = new ListenForButton();
 		
+		mainMenuButton.addActionListener(someButtonListener);
+		addWordButton.addActionListener(someButtonListener);
+		deleteWordButton.addActionListener(someButtonListener);
+		addWordField.addActionListener(someButtonListener);
 	}	
+	
+	private class ListenForButton implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if(e.getSource() == mainMenuButton)
+			{
+				int xLocation = OptionsMenu.super.getX();
+				int yLocation = OptionsMenu.super.getY();
+				new StartMenu(xLocation - 100, yLocation - 300);
+				OptionsMenu.super.dispose();
+				
+			}
+			else if (e.getSource() == addWordButton)
+			{
+				FileInstantiation.writeNewWord(addWordField.getText());
+			}
+			else if (e.getSource() == deleteWordButton)
+			{
+				
+			}
+		}
+	}
+	
 }
