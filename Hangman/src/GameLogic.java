@@ -11,9 +11,9 @@ public class GameLogic
 	{	
 //		//the below will read from a file and add it to an arrayList.
 //		Scanner s = new Scanner(new File("filepath"));
-//		ArrayList<String> list = new ArrayList<String>();
+//		//ArrayList<String> list = new ArrayList<String>();
 //		while (s.hasNext()){
-//		    list.add(s.next());
+//		    wordBank.add(s.next());
 //		}
 //		s.close();
 		wordBank.add("Apple");
@@ -23,8 +23,8 @@ public class GameLogic
 		wordBank.add("using spaces");
 		wordBank.add("Software");
 		//wordBank.remove(#); is how you delete stuff
-		//will make a Jtextfield to accept input in options
-		//will use file object or servlet to store words
+		
+		
 		Random randomNumGen = new Random();
 		int randomWordIndex = randomNumGen.nextInt(wordBank.size()) + 0;
 		String randomWord = wordBank.get(randomWordIndex);// maybe just put return on the left side of this statement
