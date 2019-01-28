@@ -1,4 +1,7 @@
 //Created by Terry Dorsey//
+package Menus;
+
+import gameLogic.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

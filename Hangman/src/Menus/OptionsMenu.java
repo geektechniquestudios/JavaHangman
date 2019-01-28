@@ -1,4 +1,7 @@
 //Created by Terry Dorsey//
+package Menus;
+
+import fileIO.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +9,10 @@ import javax.swing.*;
 
 public class OptionsMenu extends JFrame
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton mainMenuButton = new JButton();
 	JButton addWordButton = new JButton();
 	JButton deleteWordButton = new JButton();
