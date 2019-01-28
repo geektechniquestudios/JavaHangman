@@ -11,12 +11,6 @@ public class StartMenu extends JFrame
 	JButton playGameButton,
 			optionsButton;
 	private JLabel mainLabel;
-	
-	public static void main(String[] args) 
-	{
-		StartMenu someStartMenu = new StartMenu(0, 0);
-		someStartMenu.setLocationRelativeTo(null);
-	}
 
 	public StartMenu(int xLocation, int yLocation)
 	{

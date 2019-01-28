@@ -91,6 +91,7 @@ public class OptionsMenu extends JFrame
 			else if (e.getSource() == addWordButton)
 			{
 				FileInstantiation.writeNewWord(addWordField.getText());
+				addWordField.setText("");
 			}
 			else if (e.getSource() == deleteWordButton)
 			{
