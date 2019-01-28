@@ -14,6 +14,7 @@ public class OptionsMenu extends JFrame
 	JButton addWordButton = new JButton();
 	JButton deleteWordButton = new JButton();
 	JTextField addWordField = new JTextField();
+	JPanel bottomRight;
 	
 	JScrollPane someScrollPane = new JScrollPane();
 		JList wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());//////////////////////////////
@@ -38,12 +39,12 @@ public class OptionsMenu extends JFrame
 		
 		//define attributes
 		addWordField.setPreferredSize(new Dimension(150, 20));
-		addWordButton.setText("Add a word >");
+		addWordButton.setText("Add a word or phrase >");
 		deleteWordButton.setText("Delete a word >");
 		//wordBank.setPreferredSize(new Dimension(200, 100));
 		returnButtonPanel.setPreferredSize(new Dimension(500, 100));
 		//someScrollPane.getViewport().setSize(200, 500);
-		mainMenuButton.setAlignmentX(200);
+		//mainMenuButton.setAlignmentX(200);
 		mainMenuButton.setText("Main Menu");
 		
 		//add elements to panels
@@ -74,7 +75,6 @@ public class OptionsMenu extends JFrame
 		this.setVisible(true);
 		//this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		this.add(overGrid);
 	
 		//this.add(mainMenuButton);
@@ -103,14 +103,38 @@ public class OptionsMenu extends JFrame
 			}
 			else if (e.getSource() == addWordButton)
 			{
-				FileInstantiation.writeNewWord(addWordField.getText());
-				addWordField.setText("");
+				if(!(addWordField.getText().matches("[a-zA-Z ]*")))
+				{
+					JOptionPane.showMessageDialog(
+						null, 
+						"Only Enter Letters", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
+					//System.out.println("Only use the Alphabet!\n Try again.");
+				}
+				else if(addWordField.getText().length() > 15)
+				{
+					JOptionPane.showMessageDialog(null, 
+							"Keep your word under 15 characters", 
+							"Warning", 
+							JOptionPane.WARNING_MESSAGE);
+				}
+				else
+				{
+					FileInstantiation.writeNewWord(addWordField.getText());
+					addWordField.setText("");
+					
+					wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
+					//someScrollPane.getViewport().add(wordBank);
+					//bottomRight.add(someScrollPane);
+				}
 			}
 			else if (e.getSource() == deleteWordButton)
 			{
-				
+				int someIndex = wordBank.getSelectedIndex();
+				String someString = (String) wordBank.getSelectedValue();
+				System.out.println(someString);
 			}
 		}
 	}
-	
 }
