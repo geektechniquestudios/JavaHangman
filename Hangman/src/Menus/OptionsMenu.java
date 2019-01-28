@@ -9,14 +9,15 @@ import javax.swing.*;
 
 public class OptionsMenu extends JFrame
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	JButton mainMenuButton = new JButton();
 	JButton addWordButton = new JButton();
 	JButton deleteWordButton = new JButton();
 	JTextField addWordField = new JTextField();
+	
+	JScrollPane someScrollPane = new JScrollPane();
+		JList wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());//////////////////////////////
+	
 	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
@@ -32,7 +33,6 @@ public class OptionsMenu extends JFrame
 		
 		//create elements
 		
-		//JButton mainMenuButton = new JButton();
 		//JList wordBank = new JList(GameLogic.wordBank);
 		
 		
@@ -40,15 +40,21 @@ public class OptionsMenu extends JFrame
 		addWordField.setPreferredSize(new Dimension(150, 20));
 		addWordButton.setText("Add a word >");
 		deleteWordButton.setText("Delete a word >");
-		
+		//wordBank.setPreferredSize(new Dimension(200, 100));
+		returnButtonPanel.setPreferredSize(new Dimension(500, 100));
+		//someScrollPane.getViewport().setSize(200, 500);
+		mainMenuButton.setAlignmentX(200);
 		mainMenuButton.setText("Main Menu");
 		
 		//add elements to panels
+		someScrollPane.getViewport().add(wordBank);
+		
 		topLeft.add(addWordButton);
 		topRight.add(addWordField);
 		bottomLeft.add(deleteWordButton);
-		//bottomRight.add(wordBank);
+		bottomRight.add(someScrollPane);
 		returnButtonPanel.add(mainMenuButton); 
+		
 		
 		//adding the 4 panels to the main layout
 		mainGrid.setLayout(new GridLayout(2, 2, 3, 3));
@@ -62,7 +68,7 @@ public class OptionsMenu extends JFrame
 		overGrid.add(returnButtonPanel);
 		
 		
-		this.setSize(500, 250);
+		this.setSize(500, 650);
 		this.setResizable(false);
 		this.setLocation(xLocation + 100, yLocation + 300);
 		this.setVisible(true);

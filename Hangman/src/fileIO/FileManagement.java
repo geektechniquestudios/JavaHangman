@@ -28,13 +28,21 @@ public class FileManagement
 		}
 	}
 	
-	public void readFile()
+	public ArrayList<String> readFile()
 	{
-		//while(someScanner.hasNext())
-		//{
-			String a = someScanner.nextLine();
-			System.out.println(a);
-		//}
+//		while(someScanner.hasNext())
+//		{
+//			String a = someScanner.nextLine();
+//			//System.out.println(a);
+//		}
+		
+		ArrayList<String> someList = new ArrayList<String>();
+		while (someScanner.hasNext())
+		{
+		    someList.add(someScanner.nextLine());    
+		}
+		
+		return someList;
 	}
 	
 	public void closeFile()
@@ -61,28 +69,8 @@ public class FileManagement
 			System.out.println("Something went wrong!");
 		}
 	}
-	
 	public static void main(String[] args) 
 	{
-		
-//		try
-//		{
-//			Scanner s = new Scanner(new File("WordBank.txt"));
-//			ArrayList<String> list = new ArrayList<String>();
-//			while (s.hasNext())
-//			{
-//			    list.add(s.next());
-//			}
-//			s.close();
-//			System.out.println(list.get(0));
-//		}
-//		catch (Exception e)
-//		{
-//			System.out.println("shit");
-//		}
-//		
-		//List<String> lines = FileUtils.readLines(new File("/path/to/file.txt"), "utf-8");
-		
+		//compiler threw errors without main. Why?
 	}
-	
 }
