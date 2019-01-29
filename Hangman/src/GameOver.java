@@ -1,4 +1,3 @@
-package Menus;
 //Created by Terry Dorsey//
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -15,7 +14,7 @@ public class GameOver extends JFrame
 		this.setSize(800, 150);
 		this.setResizable(true);
 		this.setVisible(true);
-		this.setLocation(xLocation - 150, yLocation + 200);
+		this.setLocation(xLocation + 100, yLocation + 200);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("geekTechnique Hangman");
 		this.validate();
@@ -43,9 +42,7 @@ public class GameOver extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{////////////////////////////////////////////////////////////////////////////////////////////////
-			int xLocation = GameOver.super.getX();
-			int yLocation = GameOver.super.getY();
-			new StartMenu(xLocation + 125, yLocation - 100);
+			new StartMenu();
 			GameOver.super.dispose();
 		}
 	}

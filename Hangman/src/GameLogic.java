@@ -1,8 +1,6 @@
-package gameLogic;
 //Created by Terry Dorsey//
 import java.util.ArrayList;
 import java.util.Random;
-import fileIO.*;
 
 public class GameLogic 
 {
@@ -11,23 +9,15 @@ public class GameLogic
 	public static String getRandomWord()
 	//will add the ability to add words in options once I get the file object down,
 	{	
-//		//the below will read from a file and add it to an arrayList.
-//		Scanner s = new Scanner(new File("filepath"));
-//		//ArrayList<String> list = new ArrayList<String>();
-//		while (s.hasNext()){
-//		    wordBank.add(s.next());
-//		}
-//		s.close();
-//		wordBank.add("Apple");
-//		wordBank.add("Fish");
-//		wordBank.add("Shirt");
-//		wordBank.add("Mississippi");
-//		wordBank.add("using spaces");
-//		wordBank.add("Software");
-		
+		wordBank.add("Apple");
+		wordBank.add("Fish");
+		wordBank.add("Shirt");
+		wordBank.add("Mississippi");
+		wordBank.add("using spaces");
+		wordBank.add("Software");
 		//wordBank.remove(#); is how you delete stuff
-		wordBank = FileInstantiation.getRandomWordArrList();
-		
+		//will make a Jtextfield to accept input in options
+		//will use file object or servlet to store words
 		Random randomNumGen = new Random();
 		int randomWordIndex = randomNumGen.nextInt(wordBank.size()) + 0;
 		String randomWord = wordBank.get(randomWordIndex);// maybe just put return on the left side of this statement
@@ -35,19 +25,11 @@ public class GameLogic
 		return randomWord;
 	}
 	
-//	public static String[] getWordBank()
-//	{
-//		wordBank.add("Apple");
-//		wordBank.add("Fish");
-//		wordBank.add("Shirt");
-//		wordBank.add("Mississippi");
-//		wordBank.add("using spaces");
-//		wordBank.add("Software");
-//		String [] arrWordBank = wordBank.toArray();
-//	}
+	
 	
 	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//this generates a boolean array in response to the user's guess against the current word
 	{
+	
 		String upperCaseCurretWord = currentWord.toUpperCase();
 		char[] currentWordArray = upperCaseCurretWord.toCharArray();
 		boolean[] returnArray = new boolean[currentWordArray.length];

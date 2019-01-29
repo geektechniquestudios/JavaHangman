@@ -1,4 +1,3 @@
-package Menus;
 //Created by Terry Dorsey//
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,17 +6,21 @@ import javax.swing.*;
 
 public class StartMenu extends JFrame
 {
-	static OptionsMenu someOptionsMenu;
 	private static final long serialVersionUID = 1L;//suggested code by eclipse. 
 	
 	JButton playGameButton,
 			optionsButton;
 	private JLabel mainLabel;
+	
+	public static void main(String[] args) 
+	{
+		new StartMenu();
+	}
 
-	public StartMenu(int xLocation, int yLocation)
+	public StartMenu()
 	{
 		this.setSize(800,700);//doesn't really matter because this.pack //only changes spawn location
-		this.setLocation(xLocation, yLocation);
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("geekTechnique Hangman");
@@ -65,14 +68,9 @@ public class StartMenu extends JFrame
 			{
 				int xLocation = StartMenu.super.getX();
 				int yLocation = StartMenu.super.getY();
-				someOptionsMenu = new OptionsMenu(xLocation, yLocation);
+				new OptionsMenu(xLocation, yLocation);
 				StartMenu.super.dispose();
 			}
 		}
-	}
-	
-	public static OptionsMenu getOptionsMenuref()
-	{
-		return someOptionsMenu;
 	}
 }
