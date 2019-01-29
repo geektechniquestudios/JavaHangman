@@ -1,4 +1,7 @@
 //Created by Terry Dorsey//
+package Menus;
+
+import gameLogic.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -208,7 +211,7 @@ public class GamePlay extends JFrame
 			{
 				if((GameLogic.doesArrayContainUnderscores(toBeBlankArray)) == false)//user has won
 				{
-					String winPhrase = "You Won!  The word was " + currentWord;
+					String winPhrase = "You Won! The word was " + currentWord;
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
 					new GameOver(xLocation - 200, yLocation + 100, winPhrase);//I have tried to think of a better way. Is there a get center method? Using bounds or something? Will research later
