@@ -86,6 +86,7 @@ public class OptionsMenu extends JFrame
 		addWordButton.addActionListener(someButtonListener);
 		deleteWordButton.addActionListener(someButtonListener);
 		addWordField.addActionListener(someButtonListener);
+		this.pack();
 	}	
 	
 	private class ListenForButton implements ActionListener
@@ -106,7 +107,7 @@ public class OptionsMenu extends JFrame
 				if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 				{
 					JOptionPane.showMessageDialog(
-						null, 
+						StartMenu.getOptionsMenuref(),
 						"Only Enter Letters", 
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
@@ -114,10 +115,11 @@ public class OptionsMenu extends JFrame
 				}
 				else if(addWordField.getText().length() > 15)
 				{
-					JOptionPane.showMessageDialog(null, 
-							"Keep your word under 15 characters", 
-							"Warning", 
-							JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(
+						StartMenu.getOptionsMenuref(),
+						"Keep your word under 15 characters", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
 				}
 				else
 				{
@@ -125,8 +127,7 @@ public class OptionsMenu extends JFrame
 					addWordField.setText("");
 					
 					wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
-					//someScrollPane.getViewport().add(wordBank);
-					//bottomRight.add(someScrollPane);
+					someScrollPane.getViewport().add(wordBank);//redraws list
 				}
 			}
 			else if (e.getSource() == deleteWordButton)
