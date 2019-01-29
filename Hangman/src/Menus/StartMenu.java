@@ -71,7 +71,7 @@ public class StartMenu extends JFrame
 		}
 	}
 	
-	public static OptionsMenu getOptionsMenuref()
+	public static OptionsMenu getOptionsMenuRef()
 	{
 		return someOptionsMenu;
 	}
