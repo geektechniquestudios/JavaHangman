@@ -7,6 +7,7 @@ import javax.swing.*;
 
 public class StartMenu extends JFrame
 {
+	static OptionsMenu someOptionsMenu;
 	private static final long serialVersionUID = 1L;//suggested code by eclipse. 
 	
 	JButton playGameButton,
@@ -64,9 +65,14 @@ public class StartMenu extends JFrame
 			{
 				int xLocation = StartMenu.super.getX();
 				int yLocation = StartMenu.super.getY();
-				new OptionsMenu(xLocation, yLocation);
+				someOptionsMenu = new OptionsMenu(xLocation, yLocation);
 				StartMenu.super.dispose();
 			}
 		}
+	}
+	
+	public static OptionsMenu getOptionsMenuref()
+	{
+		return someOptionsMenu;
 	}
 }
