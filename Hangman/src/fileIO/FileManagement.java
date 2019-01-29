@@ -69,6 +69,12 @@ public class FileManagement
 			System.out.println("Something went wrong!");
 		}
 	}
+	
+	public void eraseWord()
+	{
+		
+	}
+	
 	public static void main(String[] args) 
 	{
 		//compiler threw errors without main. Why?
