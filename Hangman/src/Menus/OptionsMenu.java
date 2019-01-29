@@ -107,7 +107,7 @@ public class OptionsMenu extends JFrame
 				if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 				{
 					JOptionPane.showMessageDialog(
-						StartMenu.getOptionsMenuref(),
+						StartMenu.getOptionsMenuRef(),
 						"Only Enter Letters", 
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
@@ -116,7 +116,7 @@ public class OptionsMenu extends JFrame
 				else if(addWordField.getText().length() > 15)
 				{
 					JOptionPane.showMessageDialog(
-						StartMenu.getOptionsMenuref(),
+						StartMenu.getOptionsMenuRef(),
 						"Keep your word under 15 characters", 
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
@@ -133,8 +133,12 @@ public class OptionsMenu extends JFrame
 			else if (e.getSource() == deleteWordButton)
 			{
 				int someIndex = wordBank.getSelectedIndex();
-				String someString = (String) wordBank.getSelectedValue();
-				System.out.println(someString);
+				//String stringToDelete = (String) wordBank.getSelectedValue();
+				//System.out.println(stringToDelete);
+				FileInstantiation.deleteSomeWord(someIndex);
+				
+				wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
+				someScrollPane.getViewport().add(wordBank);//redraws list
 			}
 		}
 	}
