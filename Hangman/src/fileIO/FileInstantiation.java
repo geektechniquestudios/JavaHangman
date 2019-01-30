@@ -16,15 +16,19 @@ public class FileInstantiation
 	{
 		FileManagement someFileManagement = new FileManagement();
 		someFileManagement.openFile();
-		return someFileManagement.readFile();
+		ArrayList<String> arrayListToReturn = someFileManagement.readFile();
+		someFileManagement.closeFile();
+		
+			return arrayListToReturn;
 	}
 	
-//	public static void main(String[] args)
-//	{
-//		FileManagement r = new FileManagement();
-//		
-//		r.readFile();r.openFile();
-//		r.closeFile();
-//		r.writeToFile("hope this works");
-//	}
+	public static void deleteSomeWord(int indexOfWordToDelete)
+	{
+		FileManagement someFileManagement = new FileManagement();
+		someFileManagement.openFile();
+		ArrayList<String> listOfCurrentFile = someFileManagement.readFile();
+		listOfCurrentFile.remove(indexOfWordToDelete);	
+		someFileManagement.writeCleanToFile(listOfCurrentFile);
+		someFileManagement.closeFile();
+	}
 }

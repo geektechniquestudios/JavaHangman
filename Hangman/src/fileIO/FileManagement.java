@@ -70,13 +70,47 @@ public class FileManagement
 		}
 	}
 	
-	public void eraseWord()
+	public void writeCleanToFile(ArrayList<String> updatedFile)
 	{
-		
+		try
+		{
+			BufferedWriter someWriter = new BufferedWriter
+				(
+					new FileWriter
+						(
+							"WordBank.txt", false
+						)
+				);
+			//System.out.println(oldFile.get(0));
+			//someWriter.write("\n\n\n");
+//			for(int x = 0; updatedFile.size() < oldFile.size() - 1; x++)
+//			{
+//				someWriter.append(oldFile.get(x));
+//				//System.out.println(oldFile.get(x));
+//			}
+			boolean firstRun = true;
+			for (String x: updatedFile)
+			{
+				if(firstRun == true)
+				{
+					someWriter.write(x);
+					firstRun = false;
+				}
+				else
+				{
+					someWriter.write("\n" + x);
+				}
+			}
+			someWriter.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Something went wrong!");
+		}
 	}
 	
-	public static void main(String[] args) 
-	{
-		//compiler threw errors without main. Why?
-	}
+//	public static void main(String[] args) 
+//	{
+//		//compiler throws errors without main. Why?
+//	}
 }
