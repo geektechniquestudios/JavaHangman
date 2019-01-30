@@ -19,6 +19,7 @@ public class OptionsMenu extends JFrame
 	JScrollPane someScrollPane = new JScrollPane();
 		JList wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());//////////////////////////////
 	
+	GridBagConstraints gbc = new GridBagConstraints();
 	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
@@ -38,6 +39,7 @@ public class OptionsMenu extends JFrame
 		
 		
 		//define attributes
+		
 		addWordField.setPreferredSize(new Dimension(150, 20));
 		addWordButton.setText("Add a word or phrase >");
 		deleteWordButton.setText("Delete a word >");
@@ -49,6 +51,13 @@ public class OptionsMenu extends JFrame
 		
 		//add elements to panels
 		someScrollPane.getViewport().add(wordBank);
+		wordBank.setFixedCellHeight(20);
+		wordBank.setFixedCellWidth(200);
+		
+		topLeft.setLayout(new GridBagLayout());
+		topRight.setLayout(new GridBagLayout());
+		bottomLeft.setLayout(new GridBagLayout());
+		returnButtonPanel.setLayout(new GridBagLayout());
 		
 		topLeft.add(addWordButton);
 		topRight.add(addWordField);
@@ -64,18 +73,23 @@ public class OptionsMenu extends JFrame
 		mainGrid.add(bottomLeft);
 		mainGrid.add(bottomRight);
 		
-		overGrid.setLayout(new GridLayout(0, 1, 3, 3));
-		overGrid.add(mainGrid);
-		overGrid.add(returnButtonPanel);
+		overGrid.setLayout(new GridBagLayout());
+			gbc.gridx = 0;
+			gbc.gridy = 0;
+		overGrid.add(mainGrid, gbc);
+			gbc.gridx = 0;
+			gbc.gridy = 1;
+		overGrid.add(returnButtonPanel, gbc);
 		
 		
-		this.setSize(500, 650);
+		//this.setSize(500, 650);
 		this.setResizable(false);
 		this.setLocation(xLocation + 100, yLocation + 300);
 		this.setVisible(true);
 		//this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.add(overGrid);
+		this.setTitle("Options");
 	
 		//this.add(mainMenuButton);
 		//this.add(filler);	
