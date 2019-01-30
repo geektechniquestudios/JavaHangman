@@ -24,46 +24,11 @@ public class FileInstantiation
 	
 	public static void deleteSomeWord(int indexOfWordToDelete)
 	{
-		ArrayList<String> listForNewFile = new ArrayList<String>();
 		FileManagement someFileManagement = new FileManagement();
 		someFileManagement.openFile();
 		ArrayList<String> listOfCurrentFile = someFileManagement.readFile();
-		
-		listOfCurrentFile.remove(indexOfWordToDelete);
-		
-		//System.out.println(wordToDelete);
-//		String y;
-//		for (int x = 0; x < listOfCurrentFile.size(); x++)
-//		{
-//			String[] a = listOfCurrentFile.toArray(new String[0]);
-//			//y = listOfCurrentFile.get(x);
-//			if(a[x] != wordToDelete)
-//			{
-//				System.out.println(a[x]);
-//				System.out.println(listOfCurrentFile.get(x));
-//				System.out.println(wordToDelete);
-//				listForNewFile.add(listOfCurrentFile.get(x));
-//			}
-//			if(a[x] == wordToDelete)
-//			{
-//				System.out.println("go to bed");
-//			}
-//		}
-		
-		
-		
-		
-//		int z = 0;
-//		for(String x : listOfCurrentFile.toArray(new String[0]))
-//		{
-//			z++;
-//			if(x != wordToDelete)
-//			{
-//				listForNewFile.add(listOfCurrentFile.get(z));
-//			}
-//		}
-		
-		
+		listOfCurrentFile.remove(indexOfWordToDelete);	
 		someFileManagement.writeCleanToFile(listOfCurrentFile);
+		someFileManagement.closeFile();
 	}
 }

@@ -121,6 +121,32 @@ public class OptionsMenu extends JFrame
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
 				}
+				else if(addWordField.getText() == "")
+						//||(!(addWordField.getText().matches("[a-zA-Z].*"))))
+				{
+					JOptionPane.showMessageDialog(
+						StartMenu.getOptionsMenuRef(),
+						"You have to enter something", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
+				}
+					//if it dosn't contain letters
+				else if((!(addWordField.getText().matches("[a-zA-Z].*"))))
+				{
+					JOptionPane.showMessageDialog(
+						StartMenu.getOptionsMenuRef(),
+						"Don't start your phrases with spaces, \nor leave the field blank", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
+				}
+				else if(FileInstantiation.getRandomWordArrList().contains(addWordField.getText()))
+				{
+					JOptionPane.showMessageDialog(
+						StartMenu.getOptionsMenuRef(),
+						"You already have that word", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
+				}
 				else
 				{
 					FileInstantiation.writeNewWord(addWordField.getText());
@@ -133,10 +159,8 @@ public class OptionsMenu extends JFrame
 			else if (e.getSource() == deleteWordButton)
 			{
 				int someIndex = wordBank.getSelectedIndex();
-				//String stringToDelete = (String) wordBank.getSelectedValue();
-				//System.out.println(stringToDelete);
+				String stringToDelete = (String) wordBank.getSelectedValue();
 				FileInstantiation.deleteSomeWord(someIndex);
-				
 				wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
 				someScrollPane.getViewport().add(wordBank);//redraws list
 			}
