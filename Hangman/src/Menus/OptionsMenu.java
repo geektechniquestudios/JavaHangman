@@ -18,11 +18,13 @@ public class OptionsMenu extends JFrame
 	
 	JScrollPane someScrollPane = new JScrollPane();
 		JList wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());//////////////////////////////
-	
+		
 	GridBagConstraints gbc = new GridBagConstraints();
 	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
+		//@todo: fix this
+		this.setFocusable(false);///////////////////////////////////////
 		JPanel overGrid = new JPanel();		
 		JPanel mainGrid = new JPanel();
 		JPanel returnButtonPanel = new JPanel();
@@ -31,22 +33,13 @@ public class OptionsMenu extends JFrame
 		JPanel topRight = new JPanel();
 		JPanel bottomLeft = new JPanel();
 		JPanel bottomRight = new JPanel();
-		
-		
-		//create elements
-		
-		//JList wordBank = new JList(GameLogic.wordBank);
-		
+	
 		
 		//define attributes
-		
 		addWordField.setPreferredSize(new Dimension(150, 20));
 		addWordButton.setText("Add a word or phrase >");
 		deleteWordButton.setText("Delete a word >");
-		//wordBank.setPreferredSize(new Dimension(200, 100));
 		returnButtonPanel.setPreferredSize(new Dimension(500, 100));
-		//someScrollPane.getViewport().setSize(200, 500);
-		//mainMenuButton.setAlignmentX(200);
 		mainMenuButton.setText("Main Menu");
 		
 		//add elements to panels
@@ -54,6 +47,7 @@ public class OptionsMenu extends JFrame
 		wordBank.setFixedCellHeight(20);
 		wordBank.setFixedCellWidth(200);
 		
+		//Layouts
 		topLeft.setLayout(new GridBagLayout());
 		topRight.setLayout(new GridBagLayout());
 		bottomLeft.setLayout(new GridBagLayout());
@@ -64,7 +58,6 @@ public class OptionsMenu extends JFrame
 		bottomLeft.add(deleteWordButton);
 		bottomRight.add(someScrollPane);
 		returnButtonPanel.add(mainMenuButton); 
-		
 		
 		//adding the 4 panels to the main layout
 		mainGrid.setLayout(new GridLayout(2, 2, 3, 3));
@@ -86,25 +79,26 @@ public class OptionsMenu extends JFrame
 		this.setResizable(false);
 		this.setLocation(xLocation + 100, yLocation + 300);
 		this.setVisible(true);
+		
 		//this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.add(overGrid);
 		this.setTitle("Options");
-	
-		//this.add(mainMenuButton);
-		//this.add(filler);	
-		
+
 		ListenForButton someButtonListener = new ListenForButton();
 		
 		mainMenuButton.addActionListener(someButtonListener);
 		addWordButton.addActionListener(someButtonListener);
 		deleteWordButton.addActionListener(someButtonListener);
 		addWordField.addActionListener(someButtonListener);
-		//StartMenu.getOptionsMenuRef().getRootPane().setDefaultButton(addWordButton);
-		//StartMenu.someOptionsMenu.getRootPane().setDefaultButton(addWordButton);
-		this.getRootPane().setDefaultButton(addWordButton);
-		
 		this.pack();
+		
+		
+		//JRootPane someRootPane = new JRootPane();
+		JRootPane someRootPane = this.getRootPane();
+		//JRootPane someRootPane = SwingUtilities.getRootPane(this.addWordButton);
+		someRootPane.setDefaultButton(this.addWordButton);
+		System.out.println(someRootPane.getDefaultButton());
 	}	
 	
 	private class ListenForButton implements ActionListener
@@ -116,7 +110,7 @@ public class OptionsMenu extends JFrame
 			{
 				int xLocation = OptionsMenu.super.getX();
 				int yLocation = OptionsMenu.super.getY();
-				new StartMenu(xLocation - 100, yLocation - 300);
+				new StartMenu(xLocation - 75, yLocation - 100);
 				OptionsMenu.super.dispose();
 				
 			}
@@ -139,15 +133,6 @@ public class OptionsMenu extends JFrame
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
 				}
-				// else if(addWordField.getText() == "")
-				// 		//||(!(addWordField.getText().matches("[a-zA-Z].*"))))
-				// {
-				// 	JOptionPane.showMessageDialog(
-				// 		StartMenu.getOptionsMenuRef(),
-				// 		"You have to enter something", 
-				// 		"Warning", 
-				// 		JOptionPane.WARNING_MESSAGE);
-				// }
 					//if it dosn't contain letters
 				else if((!(addWordField.getText().matches("[a-zA-Z].*"))))
 				{
