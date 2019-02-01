@@ -60,7 +60,7 @@ public class GamePlay extends JFrame
 		this.setVisible(true);//setting up the window
 		this.setSize(500,900);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLocation(xLocation + 25, yLocation - 100); //set equal to other window and offset. I'm sure there's a better way
+		this.setLocation(xLocation + 75, yLocation - 100); //set equal to other window and offset. I'm sure there's a better way
 		this.setResizable(false);
 		this.setTitle("Hangman");
 		
@@ -211,7 +211,7 @@ public class GamePlay extends JFrame
 			{
 				if((GameLogic.doesArrayContainUnderscores(toBeBlankArray)) == false)//user has won
 				{
-					String winPhrase = "You Won! The word was " + currentWord;
+					String winPhrase = "You Won! The word was \'" + currentWord + "\'.";
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
 					new GameOver(xLocation - 200, yLocation + 100, winPhrase);//I have tried to think of a better way. Is there a get center method? Using bounds or something? Will research later
@@ -225,7 +225,7 @@ public class GamePlay extends JFrame
 				whichHangmanPath = "/ImageAssets/hangman" + failCounter + ".png";
 				if(failCounter == 8)//player loses
 				{
-					String losePhrase = "You Lost! The word was " + currentWord;
+					String losePhrase = "You Lost! The word was \'" + currentWord + "\'.";
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
 					new GameOver(xLocation, yLocation, losePhrase);

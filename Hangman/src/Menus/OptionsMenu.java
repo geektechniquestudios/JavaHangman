@@ -36,9 +36,9 @@ public class OptionsMenu extends JFrame
 	
 		
 		//define attributes
-		addWordField.setPreferredSize(new Dimension(150, 20));
-		addWordButton.setText("Add a word or phrase >");
-		deleteWordButton.setText("Delete a word >");
+		addWordField.setPreferredSize(new Dimension(218 , 20));
+		addWordButton.setText   ("Add a word or phrase >");
+		deleteWordButton.setText("       Delete a word >       ");
 		returnButtonPanel.setPreferredSize(new Dimension(500, 100));
 		mainMenuButton.setText("Main Menu");
 		
