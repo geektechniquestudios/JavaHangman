@@ -65,7 +65,7 @@ public class StartMenu extends JFrame
 			{
 				int xLocation = StartMenu.super.getX();
 				int yLocation = StartMenu.super.getY();
-				someOptionsMenu = new OptionsMenu(xLocation, yLocation);
+				someOptionsMenu = new OptionsMenu(xLocation - 25, yLocation - 200);
 				StartMenu.super.dispose();
 			}
 		}

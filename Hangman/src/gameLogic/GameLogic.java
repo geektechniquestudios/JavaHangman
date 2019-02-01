@@ -9,23 +9,7 @@ public class GameLogic
 	static ArrayList<String> wordBank = new ArrayList<String>();
 	
 	public static String getRandomWord()
-	//will add the ability to add words in options once I get the file object down,
 	{	
-//		//the below will read from a file and add it to an arrayList.
-//		Scanner s = new Scanner(new File("filepath"));
-//		//ArrayList<String> list = new ArrayList<String>();
-//		while (s.hasNext()){
-//		    wordBank.add(s.next());
-//		}
-//		s.close();
-//		wordBank.add("Apple");
-//		wordBank.add("Fish");
-//		wordBank.add("Shirt");
-//		wordBank.add("Mississippi");
-//		wordBank.add("using spaces");
-//		wordBank.add("Software");
-		
-		//wordBank.remove(#); is how you delete stuff
 		wordBank = FileInstantiation.getRandomWordArrList();
 		
 		Random randomNumGen = new Random();
@@ -34,17 +18,6 @@ public class GameLogic
 		
 		return randomWord;
 	}
-	
-//	public static String[] getWordBank()
-//	{
-//		wordBank.add("Apple");
-//		wordBank.add("Fish");
-//		wordBank.add("Shirt");
-//		wordBank.add("Mississippi");
-//		wordBank.add("using spaces");
-//		wordBank.add("Software");
-//		String [] arrWordBank = wordBank.toArray();
-//	}
 	
 	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//this generates a boolean array in response to the user's guess against the current word
 	{
