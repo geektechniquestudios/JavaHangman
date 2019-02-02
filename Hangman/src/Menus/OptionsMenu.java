@@ -97,8 +97,8 @@ public class OptionsMenu extends JFrame
 		//JRootPane someRootPane = new JRootPane();
 		JRootPane someRootPane = this.getRootPane();
 		//JRootPane someRootPane = SwingUtilities.getRootPane(this.addWordButton);
-		someRootPane.setDefaultButton(this.addWordButton);
-		System.out.println(someRootPane.getDefaultButton());
+		//someRootPane.setDefaultButton(this.addWordButton);
+		//System.out.println(someRootPane.getDefaultButton());
 	}	
 	
 	private class ListenForButton implements ActionListener
