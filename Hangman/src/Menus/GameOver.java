@@ -9,11 +9,13 @@ public class GameOver extends JFrame
 {
 	private static final long serialVersionUID = 1L;
 	JButton gameOverButton;
+	GridBagConstraints gbc = new GridBagConstraints();
 
+	
 	public GameOver(int xLocation, int yLocation, String gameOverStatement)
 	{
 		this.setSize(800, 150);
-		this.setResizable(true);
+		this.setResizable(false);
 		this.setVisible(true);
 		this.setLocation(xLocation - 150, yLocation + 200);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,15 +28,20 @@ public class GameOver extends JFrame
 
 		Font gameOverFont = new Font("Helvetica", Font.PLAIN, 30);
 	
-		gameOverPanel.setLayout(new FlowLayout());//will make pretty later when I work on options menu: gridbag
+		gameOverPanel.setLayout(new GridBagLayout());//will make pretty later when I work on options menu: gridbag
 		messageToSay.setText(gameOverStatement);
 		messageToSay.setFont(gameOverFont);
 		
 		ListenForButton someButtonListener = new ListenForButton();
 		gameOverButton.addActionListener(someButtonListener);
 		
-		gameOverPanel.add(messageToSay);//populating panel
-		gameOverPanel.add(gameOverButton);
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gameOverPanel.add(messageToSay, gbc);//populating panel
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		gameOverPanel.add(gameOverButton, gbc);
+		
 		this.add(gameOverPanel);
 	}
 	
@@ -45,7 +52,7 @@ public class GameOver extends JFrame
 		{////////////////////////////////////////////////////////////////////////////////////////////////
 			int xLocation = GameOver.super.getX();
 			int yLocation = GameOver.super.getY();
-			new StartMenu(xLocation + 125, yLocation - 100);
+			new StartMenu(xLocation + 75, yLocation - 100);
 			GameOver.super.dispose();
 		}
 	}

@@ -36,9 +36,9 @@ public class OptionsMenu extends JFrame
 	
 		
 		//define attributes
-		addWordField.setPreferredSize(new Dimension(150, 20));
-		addWordButton.setText("Add a word or phrase >");
-		deleteWordButton.setText("Delete a word >");
+		addWordField.setPreferredSize(new Dimension(218 , 20));
+		addWordButton.setText   ("Add a word or phrase >");
+		deleteWordButton.setText("       Delete a word >       ");
 		returnButtonPanel.setPreferredSize(new Dimension(500, 100));
 		mainMenuButton.setText("Main Menu");
 		
@@ -110,7 +110,7 @@ public class OptionsMenu extends JFrame
 			{
 				int xLocation = OptionsMenu.super.getX();
 				int yLocation = OptionsMenu.super.getY();
-				new StartMenu(xLocation - 75, yLocation - 100);
+				new StartMenu(xLocation - 72, yLocation - 100);
 				OptionsMenu.super.dispose();
 				
 			}
