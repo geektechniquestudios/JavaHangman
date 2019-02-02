@@ -52,7 +52,7 @@ public class GameOver extends JFrame
 		{////////////////////////////////////////////////////////////////////////////////////////////////
 			int xLocation = GameOver.super.getX();
 			int yLocation = GameOver.super.getY();
-			new StartMenu(xLocation + 125, yLocation - 100);
+			new StartMenu(xLocation + 75, yLocation - 100);
 			GameOver.super.dispose();
 		}
 	}

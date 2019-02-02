@@ -110,7 +110,7 @@ public class OptionsMenu extends JFrame
 			{
 				int xLocation = OptionsMenu.super.getX();
 				int yLocation = OptionsMenu.super.getY();
-				new StartMenu(xLocation - 75, yLocation - 100);
+				new StartMenu(xLocation - 72, yLocation - 100);
 				OptionsMenu.super.dispose();
 				
 			}
