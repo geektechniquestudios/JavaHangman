@@ -1,4 +1,5 @@
 package fileIO;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -81,13 +82,7 @@ public class FileManagement
 							"WordBank.txt", false
 						)
 				);
-			//System.out.println(oldFile.get(0));
-			//someWriter.write("\n\n\n");
-//			for(int x = 0; updatedFile.size() < oldFile.size() - 1; x++)
-//			{
-//				someWriter.append(oldFile.get(x));
-//				//System.out.println(oldFile.get(x));
-//			}
+	
 			boolean firstRun = true;
 			for (String x: updatedFile)
 			{
@@ -108,9 +103,4 @@ public class FileManagement
 			System.out.println("Something went wrong!");
 		}
 	}
-	
-//	public static void main(String[] args) 
-//	{
-//		//compiler throws errors without main. Why?
-//	}
 }

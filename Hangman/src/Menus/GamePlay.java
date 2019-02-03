@@ -11,7 +11,7 @@ public class GamePlay extends JFrame
 {
 	private static final long serialVersionUID = 1L; //recommended by eclipse
 	
-	char[] currentWordArray;//declaring fields
+	char[] currentWordArray;
 	char[] toBeBlankArray;
 	int failCounter = 1;
 	
@@ -180,14 +180,13 @@ public class GamePlay extends JFrame
 		butZ.addActionListener(keyboardListener);	
 	}//end of constructor
 	
-	private class ListenForKeyboard implements ActionListener//can I implement more than one interface on the same class? 
+	private class ListenForKeyboard implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e) //every time a Letter is tried, this is fired
-		{
-			
-			String stringToConvert = ((JButton) e.getSource()).getText();//this is just cool
-			char charToSend = stringToConvert.charAt(0);//converts String to char for method send
+		{	
+			String stringToConvert = ((JButton) e.getSource()).getText();
+			char charToSend = stringToConvert.charAt(0);
 
 			//consider containing this logic inside method?
 			boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
@@ -214,8 +213,8 @@ public class GamePlay extends JFrame
 					String winPhrase = "You Won! The word was \'" + currentWord + "\'.";
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
-					new GameOver(xLocation - 200, yLocation + 100, winPhrase);//I have tried to think of a better way. Is there a get center method? Using bounds or something? Will research later
-					// I think getX and getY refer to the top left corner of the window
+					new GameOver(xLocation - 200, yLocation + 100, winPhrase);
+
 					GamePlay.super.dispose();
 				}
 			}
@@ -239,9 +238,9 @@ public class GamePlay extends JFrame
 			}
 			
 			String holderForButton = ((JButton) e.getSource()).getText();//is holder redundant? I think I made stringToConvert this way
-			String buttonCalled = "but" + holderForButton;//reconstruct into a button's name. Wish I could call that directly. Couldn't figure it out after 10 min, said fuck it
-			switch(buttonCalled)//printed all this using button printer obviously
-			{//this make buttons gray out once they are clicked, considered reflection for shorter code, but this is better
+			String buttonCalled = "but" + holderForButton;//reconstruct into a button's name.
+			switch(buttonCalled)//printed all this using button printer
+			{//this make buttons gray out once they are clicked
 			case "butA":
 				butA.setEnabled(false);
 				break;

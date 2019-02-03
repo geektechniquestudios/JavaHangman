@@ -16,7 +16,7 @@ public class StartMenu extends JFrame
 
 	public StartMenu(int xLocation, int yLocation)
 	{
-		this.setSize(800,700);//doesn't really matter because this.pack //only changes spawn location
+		this.setSize(800,700);//doesn't really matter because this.pack, but changes spawn location
 		this.setLocation(xLocation, yLocation);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,7 +48,7 @@ public class StartMenu extends JFrame
 		optionsButton.addActionListener(someButtonListener);
 	}
 	
-	private class ListenForButton implements ActionListener//can I implement more than one interface on the same class? 
+	private class ListenForButton implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e) 

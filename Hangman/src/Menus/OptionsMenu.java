@@ -23,8 +23,6 @@ public class OptionsMenu extends JFrame
 	
 	public OptionsMenu(int xLocation, int yLocation)
 	{
-		//@todo: fix this
-		this.setFocusable(false);///////////////////////////////////////
 		JPanel overGrid = new JPanel();		
 		JPanel mainGrid = new JPanel();
 		JPanel returnButtonPanel = new JPanel();
@@ -94,11 +92,12 @@ public class OptionsMenu extends JFrame
 		this.pack();
 		
 		
+		//trying to set enter to submit new words
 		//JRootPane someRootPane = new JRootPane();
-		JRootPane someRootPane = this.getRootPane();
+		//JRootPane someRootPane = this.getRootPane();
 		//JRootPane someRootPane = SwingUtilities.getRootPane(this.addWordButton);
-		someRootPane.setDefaultButton(this.addWordButton);
-		System.out.println(someRootPane.getDefaultButton());
+		//someRootPane.setDefaultButton(this.addWordButton);
+		//System.out.println(someRootPane.getDefaultButton());
 	}	
 	
 	private class ListenForButton implements ActionListener
@@ -123,7 +122,6 @@ public class OptionsMenu extends JFrame
 						"Only Enter Letters", 
 						"Warning", 
 						JOptionPane.WARNING_MESSAGE);
-					//System.out.println("Only use the Alphabet!\n Try again.");
 				}
 				else if(addWordField.getText().length() > 15)
 				{
