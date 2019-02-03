@@ -1,5 +1,4 @@
 package fileIO;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -19,7 +18,6 @@ public class FileManagement
 					new File
 					(
 						"WordBank.txt"
-						//System.getProperty("user.dir") + "/WordBank.txt"
 					)
 				);
 		}
@@ -30,13 +28,7 @@ public class FileManagement
 	}
 	
 	public ArrayList<String> readFile()
-	{
-//		while(someScanner.hasNext())
-//		{
-//			String a = someScanner.nextLine();
-//			//System.out.println(a);
-//		}
-		
+	{	
 		ArrayList<String> someList = new ArrayList<String>();
 		while (someScanner.hasNext())
 		{
@@ -82,7 +74,6 @@ public class FileManagement
 							"WordBank.txt", false
 						)
 				);
-	
 			boolean firstRun = true;
 			for (String x: updatedFile)
 			{
