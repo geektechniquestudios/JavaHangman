@@ -1,7 +1,10 @@
-package gameLogic;
 //Created by Terry Dorsey//
+
+package gameLogic;
+
 import java.util.ArrayList;
 import java.util.Random;
+
 import fileIO.*;
 
 public class GameLogic 
@@ -14,12 +17,12 @@ public class GameLogic
 		
 		Random randomNumGen = new Random();
 		int randomWordIndex = randomNumGen.nextInt(wordBank.size()) + 0;
-		String randomWord = wordBank.get(randomWordIndex);// maybe just put return on the left side of this statement
 		
-		return randomWord;
+		return wordBank.get(randomWordIndex);
+		
 	}
 	
-	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//this generates a boolean array in response to the user's guess against the current word
+	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//generates a boolean array in response to the user's guess against the current word
 	{
 		String upperCaseCurretWord = currentWord.toUpperCase();
 		char[] currentWordArray = upperCaseCurretWord.toCharArray();
