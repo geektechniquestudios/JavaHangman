@@ -1,5 +1,6 @@
-package gameLogic;
 //Created by Terry Dorsey//
+package gameLogic;
+
 import java.util.ArrayList;
 import java.util.Random;
 import fileIO.*;
