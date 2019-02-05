@@ -1,5 +1,4 @@
 //Created by Terry Dorsey//
 
-	The current version of this software is 1.1.14
+	The current version of this software is 1.1.13
 
-This is a swing based hangman game.

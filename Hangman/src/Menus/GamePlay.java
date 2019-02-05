@@ -183,9 +183,8 @@ public class GamePlay extends JFrame
 	private class ListenForKeyboard implements ActionListener
 	{
 		@Override
-		public void actionPerformed(ActionEvent e)
-		{
-			
+		public void actionPerformed(ActionEvent e) //every time a Letter is tried, this is fired
+		{	
 			String stringToConvert = ((JButton) e.getSource()).getText();
 			char charToSend = stringToConvert.charAt(0);
 
@@ -214,7 +213,8 @@ public class GamePlay extends JFrame
 					String winPhrase = "You Won! The word was \'" + currentWord + "\'.";
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
-					new GameOver(xLocation - 200, yLocation + 100, winPhrase);//I have tried to think of a better way. Is there a get center method? Using bounds or something? Will research later
+					new GameOver(xLocation - 200, yLocation + 100, winPhrase);
+
 					GamePlay.super.dispose();
 				}
 			}
@@ -238,7 +238,7 @@ public class GamePlay extends JFrame
 			}
 			
 			String holderForButton = ((JButton) e.getSource()).getText();//is holder redundant? I think I made stringToConvert this way
-			String buttonCalled = "but" + holderForButton;
+			String buttonCalled = "but" + holderForButton;//reconstruct into a button's name.
 			switch(buttonCalled)//printed all this using button printer
 			{//this make buttons gray out once they are clicked
 			case "butA":
