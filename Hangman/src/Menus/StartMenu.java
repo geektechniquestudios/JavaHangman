@@ -16,7 +16,7 @@ public class StartMenu extends JFrame
 
 	public StartMenu(int xLocation, int yLocation)
 	{
-		this.setSize(800,700);//doesn't really matter because this.pack, but changes spawn location
+		this.setSize(800,700);//doesn't really matter because this.pack but changes spawn location
 		this.setLocation(xLocation, yLocation);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

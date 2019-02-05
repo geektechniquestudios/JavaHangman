@@ -1,5 +1,7 @@
-package Menus;
 //Created by Terry Dorsey//
+
+package Menus;
+
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.*;
@@ -28,7 +30,7 @@ public class GameOver extends JFrame
 
 		Font gameOverFont = new Font("Helvetica", Font.PLAIN, 30);
 	
-		gameOverPanel.setLayout(new GridBagLayout());//will make pretty later when I work on options menu: gridbag
+		gameOverPanel.setLayout(new GridBagLayout());
 		messageToSay.setText(gameOverStatement);
 		messageToSay.setFont(gameOverFont);
 		
