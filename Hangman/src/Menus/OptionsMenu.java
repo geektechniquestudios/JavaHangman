@@ -159,11 +159,22 @@ public class OptionsMenu extends JFrame
 			}
 			else if (e.getSource() == deleteWordButton)
 			{
-				int someIndex = wordBank.getSelectedIndex();
-				String stringToDelete = (String) wordBank.getSelectedValue();
-				FileInstantiation.deleteSomeWord(someIndex);
-				wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
-				someScrollPane.getViewport().add(wordBank);//redraws list
+				try
+				{
+					int someIndex = wordBank.getSelectedIndex();
+					String stringToDelete = (String) wordBank.getSelectedValue();
+					FileInstantiation.deleteSomeWord(someIndex);
+					wordBank = new JList(FileInstantiation.getRandomWordArrList().toArray());
+					someScrollPane.getViewport().add(wordBank);//redraws list
+				}
+				catch(Exception d)
+				{
+					JOptionPane.showMessageDialog(
+						StartMenu.getOptionsMenuRef(),
+						"You have to enter a word", 
+						"Warning", 
+						JOptionPane.WARNING_MESSAGE);
+				}	
 			}
 		}
 	}

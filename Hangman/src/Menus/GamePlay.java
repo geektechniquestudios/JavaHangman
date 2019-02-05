@@ -213,7 +213,7 @@ public class GamePlay extends JFrame
 					String winPhrase = "You Won! The word was \'" + currentWord + "\'.";
 					int xLocation = GamePlay.super.getX();
 					int yLocation = GamePlay.super.getY();
-					new GameOver(xLocation - 200, yLocation + 100, winPhrase);
+					new GameOver(xLocation, yLocation, winPhrase);
 
 					GamePlay.super.dispose();
 				}
