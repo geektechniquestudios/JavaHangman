@@ -1,5 +1,7 @@
-package Menus;
 //Created by Terry Dorsey//
+
+package Menus;
+
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.*;
