@@ -4,7 +4,7 @@
 
 This is a hangman game made in Java Swing. It is pretty simple, but you can add your own words to customize a dictionary. 
 
-## [Check out a video demo](https://youtu.be/qWjqH5Rutcg)
+## [Check out a video demo here](https://youtu.be/qWjqH5Rutcg)
 
 
 ![](hangmanDemo.png)
