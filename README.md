@@ -2,7 +2,7 @@
 
 ---
 
-This is a hangman game made in Java Swing. It is pretty simple, but you can add your own words to customize a dictionary. 
+This is a hangman game made in Java Swing. You can add your own words to customize a dictionary, but it doesn't have a built-in dictionary.
 
 ## [Check out a video demo here](https://youtu.be/qWjqH5Rutcg)
 
